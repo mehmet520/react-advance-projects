@@ -1,0 +1,20 @@
+{
+  "name": "react-advance-projects",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start:lemon": "cd little-lemon-restaurant && npm run dev",
+    "lint:lemon": "cd little-lemon-restaurant && npx eslint . --ext .js,.jsx --fix"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.27.1",
+    "@babel/preset-react": "^7.27.1",
+    "@eslint/css": "^0.7.0",
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.1.0"
+  }
+}
