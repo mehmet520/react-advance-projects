@@ -1,4 +1,3 @@
-
 # Vite + React + ESLint + Prettier Template
 
 A modern starter template using [Vite](https://vitejs.dev), [React](https://reactjs.org), [ESLint](https://eslint.org), and [Prettier](https://prettier.io) — preconfigured for rapid development with consistent code style and linting.
@@ -40,12 +39,12 @@ npm install
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ---
+
 Happy coding!
 
-
 Features
-	•	🔥 Vite
-	•	⚛️ React
-	•	✅ ESLint (with JSX + React plugin)
-	•	🎨 Prettier
-	•	🧹 Pre-configured VS Code settings
+• 🔥 Vite
+• ⚛️ React
+• ✅ ESLint (with JSX + React plugin)
+• 🎨 Prettier
+• 🧹 Pre-configured VS Code settings
