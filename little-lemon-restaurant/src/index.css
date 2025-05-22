@@ -38,7 +38,7 @@
 
 @layer components {
   .card {
-    @apply p-6 bg-white rounded-lg shadow-md dark:bg-gray-800;
+    @apply mx-2 my-4 p-6 bg-slate-100 rounded-lg drop-shadow-lg shadow-md dark:bg-gray-800;
   }
 
   .logo {

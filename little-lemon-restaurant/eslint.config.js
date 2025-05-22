@@ -1,37 +1,34 @@
-import js from '@eslint/js'
-import css from '@eslint/css'
-import { defineConfig } from 'eslint/config'
-import prettier from 'eslint-config-prettier'
-import pluginReact from 'eslint-plugin-react'
+import eslintPluginReact from 'eslint-plugin-react'
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import prettierPlugin from 'eslint-plugin-prettier'
 import globals from 'globals'
 
-export default defineConfig([
+export default [
   {
-    files: ['**/*.{js,mjs,cjs,jsx}'],
+    files: ['**/*.{js,jsx}'],
     languageOptions: {
-      globals: globals.browser,
-      parser: '@babel/eslint-parser',
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
-        requireConfigFile: false,
-        babelOptions: {
-          presets: ['@babel/preset-react'],
-        },
       },
     },
-    plugins: [pluginReact, prettierPlugin],
-    extends: [
-      js.configs.recommended,
-      pluginReact.configs.recommended,
-      prettier,
-    ],
+    plugins: {
+      react: eslintPluginReact,
+      'react-hooks': eslintPluginReactHooks,
+      prettier: prettierPlugin,
+    },
     rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
       'prettier/prettier': 'error',
-      'react/react-in-jsx-scope': 'off',
-      'react/react-in-jsx-scope': 'off',
     },
     settings: {
       react: {
@@ -39,15 +36,4 @@ export default defineConfig([
       },
     },
   },
-  {
-    files: ['**/*.css'],
-    languageOptions: {
-      parser: css.parsers.css,
-    },
-    plugins: [css],
-    extends: [css.configs.recommended],
-    rules: {
-      'css/use-baseline': 'off',
-    },
-  },
-])
+]

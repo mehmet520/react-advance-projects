@@ -7,5 +7,5 @@ export default function DessertItem({ title, description, image, price }) {
         <p className="text-gray-600 dark:text-gray-300">${price.toFixed(2)}</p>
       </div>
     </li>
-  );
+  )
 }

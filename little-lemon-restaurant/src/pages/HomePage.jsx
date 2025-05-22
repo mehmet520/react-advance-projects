@@ -1,4 +1,5 @@
-import DessertSection from '../components/Desserts';
+import { Link } from 'react-router-dom'
+import DessertSection from '../components/desserts/DessertSection'
 
 const sampleDesserts = [
   {
@@ -25,17 +26,50 @@ const sampleDesserts = [
     price: 5.25,
     image: 'https://picsum.photos/150/100?random=4',
   },
-];
+]
 
 export default function HomePage() {
   return (
-    <main className="p-8">
+    <main className="p-6">
+      <h1 className="p-2 text-3xl font-bold">Little Lemon Restaurant</h1>
+
       <h1>Home Page</h1>
-      <DessertSection desserts={sampleDesserts} />{' '}
-      {/* components/Desserts/index.js dosyasını kullanıyoruz */}
-      <div>
-        <p>Ekstra içerik buraya eklendi.</p>
+      <div className="card">
+        <DessertSection desserts={sampleDesserts} />
+        {/* components/Desserts/index.js dosyasını kullanıyoruz */}
+      </div>
+      <div className="card mt-8 bg-slate-200">
+        <h2 className="mb-2 text-2xl font-bold text-amber-600 ">Todos</h2>
+        <Link
+          to="/todos"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          ➕ Todos anzeigen
+        </Link>
+      </div>
+      <div className="card bg-blue-200">
+        <h2 className="mb-2 text-2xl font-bold text-amber-600 ">
+          Benutzer Anmelden
+        </h2>
+
+        <Link
+          to="/reservation-form"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          Benutzer-Eingabe mit reducer
+        </Link>
+      </div>
+      <div className="card bg-rose-200">
+        <h2 className="mb-2 text-2xl font-bold text-amber-600">
+          Feedback Form
+        </h2>
+        <Link
+          to="/feedback"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          Geben Sie uns Ihr Feedback
+        </Link>
       </div>
     </main>
-  );
+  )
 }

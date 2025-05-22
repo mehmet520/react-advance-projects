@@ -1,4 +1,9 @@
-export default function DessertControls({ searchTerm, sortOrder, onSearchChange, onSortChange }) {
+export default function DessertControls({
+  searchTerm,
+  sortOrder,
+  onSearchChange,
+  onSortChange,
+}) {
   return (
     <div className="flex flex-col gap-2 sm:flex-row sm:justify-between mb-4">
       <input
@@ -17,5 +22,5 @@ export default function DessertControls({ searchTerm, sortOrder, onSearchChange,
         <option value="desc">Fiyat: Azalan</option>
       </select>
     </div>
-  );
+  )
 }
