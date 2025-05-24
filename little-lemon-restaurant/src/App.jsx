@@ -9,7 +9,7 @@ function App() {
     <>
       <p className="p-2 text-lg font-semibold bg-green-400 border-l-2 divide-violet-200 m-2 border-blue-300 border-4">
         Mehmet Yilmaz <br />
-        GitHub-Adresse:{" "}
+        GitHub-Adresse:{' '}
         <a
           href="https://github.com/mehmet520"
           target="_blank"
