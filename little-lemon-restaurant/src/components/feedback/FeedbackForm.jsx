@@ -1,10 +1,12 @@
-export default function FeedbackForm({ formData, handleChange, handleSubmit }) {
+import React from 'react'
+
+function FeedbackForm({ formData, handleChange, handleSubmit }) {
   return (
     <div className="card max-w-xl mx-auto mt-8 dark:bg-white p-4 rounded-lg shadow">
       <h2 className="dark:text-blue-950 text-2xl font-semibold mb-4 ">
         Feedback Form
       </h2>
-      <form action="" onSubmit={handleSubmit} className="">
+      <form onSubmit={handleSubmit} className="">
         <div className="flex items-center card m-4 border">
           <label htmlFor="range" className="mr-4">
             Score: {formData.score} ⭐
@@ -14,7 +16,7 @@ export default function FeedbackForm({ formData, handleChange, handleSubmit }) {
             type="range"
             name="score"
             id="range"
-            value={formData.score}
+            value={String(formData.score)}
             onChange={handleChange}
             min="0"
             max="10"
@@ -43,3 +45,5 @@ export default function FeedbackForm({ formData, handleChange, handleSubmit }) {
     </div>
   )
 }
+
+export default React.memo(FeedbackForm)

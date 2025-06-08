@@ -1,8 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import TodosPage from './pages/TodosPage'
-import ReducerPage from './pages/ReservationPage'
+import ReservationPage from './pages/ReservationPage'
 import FeedbackPage from './pages/FeedbackPage'
+import RegistrationPage from './pages/RegistrationPage'
+import { UserProvider } from './contexts/user/UserContext'
+import { ThemeProvider } from './contexts/theme/ThemeContext'
+import { ReservationProvider } from './contexts/reservation/ReservationContext'
+import { FeedbackProvider } from './contexts/feedback/FeedbackContext'
+import Layout from './components/Layout'
 
 function App() {
   return (
@@ -19,14 +25,28 @@ function App() {
           github.com/mehmet520
         </a>
       </p>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/todos" element={<TodosPage />} />
-          <Route path="/reservation-form" element={<ReducerPage />} />
-          <Route path="/feedback" element={<FeedbackPage />} />
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider>
+        <UserProvider>
+          <ReservationProvider>
+            <FeedbackProvider>
+              <BrowserRouter>
+                <Layout>
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/todos" element={<TodosPage />} />
+                    <Route path="/reservation" element={<ReservationPage />} />
+                    <Route path="/feedback" element={<FeedbackPage />} />
+                    <Route
+                      path="/registration"
+                      element={<RegistrationPage />}
+                    />
+                  </Routes>
+                </Layout>
+              </BrowserRouter>
+            </FeedbackProvider>
+          </ReservationProvider>
+        </UserProvider>
+      </ThemeProvider>
     </>
   )
 }

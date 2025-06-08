@@ -1,10 +1,12 @@
-// import { Link } from 'react-router-dom';
-import FormSection from '../components/reservation/FormSection'
+import ReservationSection from '../components/reservation/ReservationSection'
+import ReservationList from '../components/reservation/ReservationList'
 
 export default function ReservationPage() {
   return (
     <div>
-      <FormSection />
+      <h1>Reservation Page</h1>
+      <ReservationSection />
+      <ReservationList />
     </div>
   )
 }

@@ -38,7 +38,7 @@ export default [
         { allowConstantExport: true },
       ],
       'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'warn',
     },
     settings: {
       react: {

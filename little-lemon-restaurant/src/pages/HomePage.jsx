@@ -34,10 +34,7 @@ export default function HomePage() {
       <h1 className="p-2 text-3xl font-bold">Little Lemon Restaurant</h1>
 
       <h1>Home Page</h1>
-      <div className="card">
-        <DessertSection desserts={sampleDesserts} />
-        {/* components/Desserts/index.js dosyasını kullanıyoruz */}
-      </div>
+      
       <div className="card mt-8 bg-slate-200">
         <h2 className="mb-2 text-2xl font-bold text-amber-600 ">Todos</h2>
         <Link
@@ -49,17 +46,17 @@ export default function HomePage() {
       </div>
       <div className="card bg-blue-200">
         <h2 className="mb-2 text-2xl font-bold text-amber-600 ">
-          Benutzer Anmelden
+          Reservation Making
         </h2>
 
         <Link
-          to="/reservation-form"
+          to="/reservation"
           className="text-blue-600 underline hover:text-blue-800"
         >
-          Benutzer-Eingabe mit reducer
+          Reservation Page
         </Link>
       </div>
-      <div className="card bg-rose-200">
+      <div className="card bg-orange-200">
         <h2 className="mb-2 text-2xl font-bold text-amber-600">
           Feedback Form
         </h2>
@@ -69,6 +66,22 @@ export default function HomePage() {
         >
           Geben Sie uns Ihr Feedback
         </Link>
+      </div>
+      <div className="card bg-rose-200">
+        <h2 className="mb-2 text-2xl font-bold text-amber-600">
+          Registration Form
+        </h2>
+        <Link
+          to="/registration"
+          className="txt-blue-600 underline hover:text-blue-800"
+        >
+          Anmelden
+        </Link>
+      </div>
+
+      <div className="card">
+        <DessertSection desserts={sampleDesserts} />
+        {/* components/Desserts/index.js dosyasını kullanıyoruz */}
       </div>
     </main>
   )
